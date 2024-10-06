@@ -37,12 +37,12 @@ $ sudo nano /eetc/ssh/sshd_config
 ```
 
 ```
-Port 2222                                                         # Cambiar el puerto por defecto (usa un número entre 1024 y 65535)
-PermitRootLogin no                                       # Deshabilitar root login
-PasswordAuthentication no                            # Deshabilitar password authentication
-PubkeyAuthentication yes                              # Habilitar clave publica para autenticación
+Port 2222                                   # Cambiar el puerto por defecto (usa un número entre 1024 y 65535)
+PermitRootLogin no                          # Deshabilitar root login
+PasswordAuthentication no                   # Deshabilitar password authentication
+PubkeyAuthentication yes                    # Habilitar clave publica para autenticación
 AuthorizedKeysFile .ssh/authorized_keys     # Especifica la ubicación del archivo authorized_keys
-AllowUsers nombre_usuario                          # Solo permite que usuarios especiicos inicien sesión
+AllowUsers nombre_usuario                   # Solo permite que usuarios especiicos inicien sesión
 ```
 
 Presionamos Ctrl+S para guardar los cambios y resetaamos el servicio.
@@ -56,9 +56,9 @@ Lo más probable es que no eche fuera de la sesión una vez reiniciado el servic
 Si perdemos nuestra clave privada, ya no podremos acceder al servidor de manera remota. Podemos asegurar mucho más el inicio de sesión con:
 
 ```
-Protocol 2                             # Usar solamente protocolo SSH version 2
-MaxAuthTries 3                   # Limitar los intentos de acceso
-ClientAliveInterval 300       # Intervalo en segundos que el cliente tiene acceso
+Protocol 2                 # Usar solamente protocolo SSH version 2
+MaxAuthTries 3             # Limitar los intentos de acceso
+ClientAliveInterval 300    # Intervalo en segundos que el cliente tiene acceso
 ClientAliveCountMax 2      # Número máximo de clientes activos
 ```
 
